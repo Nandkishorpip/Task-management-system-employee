@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <menuitem id="menu_reports" name="Task Report"/>
+        <menuitem id="menu_department" name="Department" parent="menu_reports" action="action_department"/>
+        <menuitem id="menu_employee" name="Employee" parent="menu_reports" action="action_employee"/>
+        <menuitem id="menu_task" name="Task" parent="menu_reports" action="action_task"/>
+    </data>
+</odoo>

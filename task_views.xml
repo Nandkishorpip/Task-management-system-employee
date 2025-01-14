@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_task_tree" model="ir.ui.view">
+        <field name="model">task.task</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="Task_Name"/>
+                <field name="Assigned_employee"/>
+                <field name="deadline"/>
+                <field name="status"/>
+                <field name="Notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_form">
+        <field name="name">task.task.form</field>
+        <field name="model">task.task</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="Task_Name"/>
+                            <field name="Assigned_employee"/>
+                            <field name="deadline"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="Notes"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_task">
+        <field name="name">Task</field>
+        <field name="res_model">task.task</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

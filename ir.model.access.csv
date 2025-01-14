@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_department_task,access.employee.task,model_department_task,base.group_user,1,1,1,1
+access_employee_task,access.employee.task,model_employee_task,base.group_user,1,1,1,1
+access_task_task,access.task.task,model_task_task,base.group_user,1,1,1,1
+

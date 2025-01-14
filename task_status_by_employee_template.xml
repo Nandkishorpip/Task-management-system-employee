@@ -1,0 +1,43 @@
+<odoo>
+<template id="report_task_status_employee">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+            <div class="page">
+                <h2>Task Status by Employee</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>User Access</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<!--                        <t t-foreach="doc.employee" t-as="employee">-->
+                            <tr>
+                                <td><t t-esc="doc.name"/></td>
+                                <td><t t-esc="doc.department"/></td>
+                                <td><t t-esc="doc.email"/></td>
+                                <td><t t-esc="doc.User_Access"/></td>
+                            </tr>
+<!--                        </t>-->
+                    </tbody>
+                </table>
+            </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_task_status_report" model="ir.actions.report">
+        <field name="name">Task Status by Department</field>
+        <field name="model">employee.task</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">employee_task_management.report_task_status_employee</field>
+        <field name="report_file">employee_task_management.report_task_status_employee</field>
+        <field name="binding_model_id" ref="model_employee_task"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
